@@ -39,3 +39,5 @@ public:
         return ans;
     }
 };
+//T.C= O(N) Log(N)
+//S.C=O(N)
