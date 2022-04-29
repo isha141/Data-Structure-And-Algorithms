@@ -1,4 +1,4 @@
-///T.C= O(NlogN) 
+///T.C= O(N) 
 ///S>C =O(N)+O(N)
 class Solution
 { 
