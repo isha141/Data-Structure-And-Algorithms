@@ -64,4 +64,30 @@ public:
             ans.push_back(itr.second);
         return ans;
     }
+}; 
+
+// Optimized approach 
+
+// T.C=O(N)
+// S.C=O(H) -->in worst case it will be O(N)
+
+
+class Solution { 
+    private:
+    void solve(TreeNode* root,int x, vector<int> &ans)
+    { 
+        // right view by using reverse preorder travesal 
+        if(root==NULL)
+            return ;
+        if(ans.size()==x)
+            ans.push_back(root->val);
+        solve(root->right,x+1,ans);
+        solve(root->left,x+1,ans);
+    }
+public:
+    vector<int> rightSideView(TreeNode* root) {
+       vector<int> ans;
+        solve(root,0,ans);
+        return ans;
+    }
 };
