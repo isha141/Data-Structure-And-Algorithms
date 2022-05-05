@@ -1,0 +1,20 @@
+// T.C=O(N)
+// S.C=O(N)
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int,int>mp;
+        int n=nums.size();
+        for(int i=0;i<n;i++)
+        {
+            if(mp.count(target-nums[i]))
+            {
+                return {i,mp[target-nums[i]]};
+            } 
+            else
+                mp[nums[i]]=i;
+        }
+        return {};
+    }
+};
